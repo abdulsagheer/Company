@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-
+import dj_databse_url
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
@@ -23,7 +23,7 @@ TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'zfymy3*rl@%3ig_fb+@4jd_y+untfft43_r(e0!kjxg49g^f2('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = []
 
@@ -95,6 +95,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'profiles.context_processors.profile_pic',
                 'profiles.context_processors.get_profile',
+                'whitenoise.middleware.WhiteNoiseMiddleware',
                 
 
             ],
@@ -121,6 +122,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
 
 
 # Password validation
@@ -175,3 +177,5 @@ MEDIA_URL = '/media/'
 
 MEDIA_ROOT = os.path.join(os.path.dirname(
 BASE_DIR),'/media/', "static_cdn", "media_root")
+
+STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
