@@ -78,6 +78,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'posts.custommiddleware.CustomMiddlewareExample',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'company.urls'
@@ -95,7 +96,7 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'profiles.context_processors.profile_pic',
                 'profiles.context_processors.get_profile',
-                'whitenoise.middleware.WhiteNoiseMiddleware',
+                
                 
 
             ],
