@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block title %}View2{% endblock title %}
+
+{% block content %}
+<h1>{{user}}</h1>
+<br>
+<a href="{% url 'profiles:test1' %}"><button class="btn btn-primary">nikhath</button></a>
+<a href="{% url 'profiles:test' %}"><button class="btn btn-primary">sagheer</button></a>
+{% endblock content %}
