@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 from pathlib import Path
-import dj_databse_url
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
@@ -23,9 +23,9 @@ TEMPLATES_DIR=os.path.join(BASE_DIR,'templates')
 SECRET_KEY = 'zfymy3*rl@%3ig_fb+@4jd_y+untfft43_r(e0!kjxg49g^f2('
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
-ALLOWED_HOSTS = ["stark-bayou-12582.herokuapp.com"]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -118,12 +118,11 @@ WSGI_APPLICATION = 'company.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_databse_url.config(default='django.db.backends.sqlite3://django.db.backends.sqlite3:sagheer29')
+    'default':{
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-
 
 
 # Password validation
@@ -179,4 +178,4 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(
 BASE_DIR),'/media/', "static_cdn", "media_root")
 
-STATICFILES_STORAGE='whitenoise.storage.CompressedManifestStaticFilesStorage'
+
