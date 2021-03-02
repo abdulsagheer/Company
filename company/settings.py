@@ -25,7 +25,7 @@ SECRET_KEY = 'zfymy3*rl@%3ig_fb+@4jd_y+untfft43_r(e0!kjxg49g^f2('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["stark-bayou-12582.herokuapp.com"]
 
 
 # Application definition
@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'company.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
+    'default': dj_databse_url.config(default='django.db.backends.sqlite3://django.db.backends.sqlite3:sagheer29')
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
     }
